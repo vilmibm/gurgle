@@ -4,7 +4,6 @@ import subprocess
 import textwrap
 import urllib2
 
-from lxml import etree
 import lxml.html
 
 # This program is free software: you can redistribute it and/or modify
