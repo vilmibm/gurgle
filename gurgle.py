@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 import sys
 import subprocess
 import textwrap
@@ -65,7 +66,10 @@ def main():
         browser_command = "w3m"
     else:
         browser_command = "x-www-browser"
-    subprocess.call([browser_command, choice_href])
+
+    pid = os.fork()
+    if pid == 0:
+        subprocess.call([browser_command, choice_href])
 
     return 0
 
